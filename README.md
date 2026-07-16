@@ -21,7 +21,7 @@ The application contains multiple pages that communicate through Kubernetes Ingr
             User Browser
                  |
                  |
-         Nginx Ingress Controller
+         Nginx Ingress Controllers
                  |
     --------------------------------
     |              |              |
