@@ -15,9 +15,7 @@ spec:
 
   rules:
 
-  - host: portal.local
-
-    http:
+  - http:
 
       paths:
 
