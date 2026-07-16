@@ -1,17 +1,466 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jerry DevOps Company</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8fafc;
+    color: #334155;
+}
+
+
+/* Header */
+
+header {
+    background: linear-gradient(135deg, #0f172a, #1d4ed8);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+
+header h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+
+header p {
+    font-size: 20px;
+}
+
+
+
+/* Navigation */
+
+nav {
+    background: #020617;
+    padding: 18px;
+    text-align: center;
+}
+
+
+nav a {
+
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 17px;
+    font-weight: bold;
+
+}
+
+
+nav a:hover {
+
+    color: #38bdf8;
+
+}
+
+
+
+/* Hero Section */
+
+.hero {
+
+    background:white;
+    padding:70px 20px;
+    text-align:center;
+
+}
+
+
+.hero h2 {
+
+    font-size:40px;
+    color:#0f172a;
+    margin-bottom:20px;
+
+}
+
+
+.hero p {
+
+    font-size:20px;
+    max-width:800px;
+    margin:auto;
+    line-height:1.7;
+
+}
+
+
+
+.btn {
+
+    display:inline-block;
+    margin-top:30px;
+    background:#2563eb;
+    color:white;
+    padding:15px 35px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+
+}
+
+
+.btn:hover {
+
+    background:#1d4ed8;
+
+}
+
+
+
+/* Container */
+
+.container {
+
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:50px 0;
+
+}
+
+
+.container h2 {
+
+    text-align:center;
+    color:#0f172a;
+    margin-bottom:30px;
+    font-size:32px;
+
+}
+
+
+
+/* Cards */
+
+.cards {
+
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+
+}
+
+
+
+.card {
+
+    background:white;
+    flex:1;
+    min-width:280px;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    text-align:center;
+
+}
+
+
+
+.card h3 {
+
+    color:#2563eb;
+    margin-bottom:15px;
+
+}
+
+
+.card p {
+
+    line-height:1.6;
+
+}
+
+
+
+
+/* Technology Section */
+
+.tech {
+
+    background:#e0f2fe;
+
+}
+
+
+
+
+/* Footer */
+
+footer {
+
+    background:#020617;
+    color:white;
+    text-align:center;
+    padding:30px;
+
+}
+
+
+footer p {
+
+    margin:8px;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
 <body>
 
-<h1>Welcome to Jerry DevOps Company</h1>
 
-<h2>Our Pages</h2>
+<header>
 
-<a href="/about">About Us</a>
-<br>
+<h1>Jerry DevOps Company</h1>
+
+<p>Cloud Engineering | Automation | Kubernetes | CI/CD</p>
+
+</header>
+
+
+
+
+<nav>
+
+<a href="/">Home</a>
+
+<a href="/about">About</a>
 
 <a href="/services">Services</a>
-<br>
 
 <a href="/contact">Contact</a>
 
+</nav>
+
+
+
+
+
+<section class="hero">
+
+
+<h2>Building The Future With DevOps</h2>
+
+
+<p>
+
+We design, automate, and deploy modern cloud solutions
+that help businesses deliver applications faster,
+safer, and more reliably.
+
+</p>
+
+
+<p>
+
+From infrastructure automation to Kubernetes deployments,
+we help organizations embrace the power of cloud technology.
+
+</p>
+
+
+
+<a class="btn" href="/services">
+
+Explore Our Services
+
+</a>
+
+
+</section>
+
+
+
+
+
+
+<section class="container">
+
+
+<h2>Why Choose Us?</h2>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>Cloud Solutions</h3>
+
+<p>
+
+We build secure and scalable cloud infrastructure
+using modern cloud platforms and best practices.
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>CI/CD Automation</h3>
+
+<p>
+
+We create automated pipelines using GitHub,
+Jenkins, Docker and Kubernetes.
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Container Management</h3>
+
+<p>
+
+We deploy and manage applications using
+Docker containers and Kubernetes orchestration.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section class="container tech">
+
+
+<h2>Our Technology Stack</h2>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>Docker</h3>
+
+<p>
+
+Containerizing applications for consistent
+development and production environments.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Kubernetes</h3>
+
+<p>
+
+Managing scalable and highly available
+containerized applications.
+
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>AWS Cloud</h3>
+
+<p>
+
+Building reliable cloud infrastructure
+with security and scalability.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Jenkins</h3>
+
+<p>
+
+Automating software delivery through
+continuous integration and deployment.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 Jerry DevOps Company
+</p>
+
+<p>
+Delivering Cloud Solutions Through Automation
+</p>
+
+</footer>
+
+
+
 </body>
+
 </html>
