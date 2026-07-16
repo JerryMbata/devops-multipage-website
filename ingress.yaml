@@ -1,0 +1,57 @@
+apiVersion: networking.k8s.io/v1
+
+kind: Ingress
+
+metadata:
+  name: portal-ingress
+
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+
+spec:
+
+  ingressClassName: nginx
+
+  rules:
+
+  - host: portal.local
+
+    http:
+
+      paths:
+
+      - path: /()(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: home-service
+            port:
+              number: 80
+
+
+      - path: /about(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: about-service
+            port:
+              number: 80
+
+
+      - path: /services(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: services-service
+            port:
+              number: 80
+
+
+      - path: /contact(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: contact-service
+            port:
+              number: 80

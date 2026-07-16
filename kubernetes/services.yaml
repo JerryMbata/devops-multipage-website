@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: services
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: services
+
+  template:
+    metadata:
+      labels:
+        app: services
+
+    spec:
+      containers:
+      - name: services
+        image: jerrymbata1/services-page:v1
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: services-service
+
+spec:
+  selector:
+    app: services
+
+  ports:
+  - port: 80
+    targetPort: 80
