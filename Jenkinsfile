@@ -1,110 +1,141 @@
 pipeline {
 
-agent any
+    agent any
+
+    environment {
+
+        IMAGE_NAME = "jerrymbata1/home-page"
+        IMAGE_TAG = "${BUILD_NUMBER}"
+
+    }
 
 
-environment {
-
-IMAGE_NAME = "jerrymbata1/home-page"
-
-IMAGE_TAG = "${BUILD_NUMBER}"
-
-}
+    stages {
 
 
-stages {
+        stage('Build Docker Image') {
 
+            steps {
 
-stage('Checkout Code') {
+                echo "Building Docker image..."
 
-steps {
+                sh """
+                docker build \
+                -t ${IMAGE_NAME}:${IMAGE_TAG} \
+                ./home
+                """
 
-git branch: 'main',
-url: 'https://github.com/YOUR_USERNAME/devops-portal.git'
+            }
 
-}
-
-}
-
-
-
-stage('Build Docker Image') {
-
-steps {
-
-sh """
-
-docker build \
--t ${IMAGE_NAME}:${IMAGE_TAG} \
-./home
-
-"""
-
-}
-
-}
+        }
 
 
 
-stage('Docker Login') {
+        stage('Docker Login') {
 
-steps {
+            steps {
 
-withCredentials([usernamePassword(
-credentialsId: 'dockerhub',
-usernameVariable: 'USERNAME',
-passwordVariable: 'PASSWORD'
-)]) {
+                echo "Logging into Docker Hub..."
 
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: 'dockerhub',
+                        usernameVariable: 'DOCKER_USER',
+                        passwordVariable: 'DOCKER_PASS'
+                    )
+                ]) {
 
-sh """
+                    sh """
 
-echo $PASSWORD | docker login \
--u $USERNAME \
---password-stdin
+                    echo \$DOCKER_PASS | docker login \
+                    -u \$DOCKER_USER \
+                    --password-stdin
 
-"""
+                    """
 
-}
+                }
 
-}
+            }
 
-}
-
-
-
-stage('Push Image') {
-
-steps {
-
-sh """
-
-docker push ${IMAGE_NAME}:${IMAGE_TAG}
-
-"""
-
-}
-
-}
+        }
 
 
 
-stage('Deploy To Kubernetes') {
+        stage('Push Docker Image') {
 
-steps {
+            steps {
 
-sh """
+                echo "Pushing image to Docker Hub..."
 
-kubectl set image deployment/home \
-home=${IMAGE_NAME}:${IMAGE_TAG}
+                sh """
 
-"""
+                docker push ${IMAGE_NAME}:${IMAGE_TAG}
 
-}
+                """
 
-}
+            }
+
+        }
 
 
-}
+
+        stage('Deploy To Kubernetes') {
+
+            steps {
+
+                echo "Deploying to Kubernetes..."
+
+                sh """
+
+                kubectl set image deployment/home \
+                home=${IMAGE_NAME}:${IMAGE_TAG}
+
+                """
+
+            }
+
+        }
+
+
+
+        stage('Verify Deployment') {
+
+            steps {
+
+                echo "Checking rollout status..."
+
+                sh """
+
+                kubectl rollout status deployment/home
+
+                kubectl get pods
+
+                """
+
+            }
+
+        }
+
+
+    }
+
+
+    post {
+
+        success {
+
+            echo "Deployment completed successfully!"
+
+        }
+
+
+        failure {
+
+            echo "Deployment failed. Check logs."
+
+        }
+
+    }
+
 
 }
