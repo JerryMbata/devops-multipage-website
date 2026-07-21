@@ -1,111 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Our Services | Jerry DevOps Company</title>
+<title>Services | JecomTech Company</title>
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f4f7fa;
-    color:#333;
+background:#f4f7fb;
+color:#334155;
 }
 
 header{
-    background:linear-gradient(135deg,#0f172a,#2563eb);
-    color:white;
-    text-align:center;
-    padding:40px;
+background:linear-gradient(135deg,#0f172a,#2563eb);
+padding:35px;
+text-align:center;
+color:white;
 }
 
 header h1{
-    font-size:42px;
-    margin-bottom:10px;
+font-size:42px;
+margin-bottom:10px;
 }
 
-header p{
-    font-size:18px;
+nav{
+background:#020617;
+padding:18px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 18px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#38bdf8;
 }
 
 .container{
-    width:90%;
-    max-width:1100px;
-    margin:40px auto;
+width:90%;
+max-width:1200px;
+margin:40px auto;
 }
 
-.card{
-    background:white;
-    padding:35px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    margin-bottom:30px;
+.intro{
+background:white;
+padding:35px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+margin-bottom:35px;
 }
 
-h2{
-    color:#2563eb;
-    margin-bottom:20px;
+.intro h2{
+color:#2563eb;
+margin-bottom:15px;
 }
 
-p{
-    line-height:1.8;
-    margin-bottom:20px;
+.intro p{
+line-height:1.8;
 }
 
 .services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
-.service-box{
-    background:#eef6ff;
-    padding:25px;
-    border-radius:10px;
-    border-left:5px solid #2563eb;
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.3s;
 }
 
-.service-box h3{
-    margin-bottom:10px;
-    color:#0f172a;
+.card:hover{
+transform:translateY(-8px);
 }
 
-.service-box p{
-    margin:0;
-    line-height:1.6;
+.card h3{
+color:#2563eb;
+margin-bottom:15px;
+}
+
+.card p{
+line-height:1.7;
+}
+
+.bottom{
+margin-top:35px;
+background:white;
+padding:35px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
 .btn{
-    display:inline-block;
-    margin-top:20px;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    padding:12px 25px;
-    border-radius:6px;
-    font-weight:bold;
+display:inline-block;
+margin-top:20px;
+padding:14px 28px;
+background:#2563eb;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
 }
 
 .btn:hover{
-    background:#1d4ed8;
+background:#1d4ed8;
 }
 
 footer{
-    background:#0f172a;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
+background:#020617;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:40px;
 }
 
 </style>
@@ -116,72 +139,122 @@ footer{
 
 <header>
 
-<h1>🚀 Our Services</h1>
+<h1>Our Services</h1>
 
-<p>Delivering Modern Cloud & DevOps Solutions</p>
+<p>Modern Cloud & DevOps Solutions</p>
 
 </header>
 
+<nav>
+
+<a href="/">Home</a>
+<a href="/about">About</a>
+<a href="/services">Services</a>
+<a href="/contact">Contact</a>
+
+</nav>
+
 <div class="container">
 
-<div class="card">
+<div class="intro">
 
 <h2>What We Do</h2>
 
 <p>
-We help organizations accelerate software delivery by implementing modern DevOps
-practices, cloud infrastructure, and automation solutions. Our goal is to improve
-speed, reliability, scalability, and security across every stage of the software
-development lifecycle.
+
+At JecomTech Company, we help businesses build secure cloud infrastructure, automate software delivery, and modernize application deployment using industry-leading DevOps tools and practices.
+
 </p>
 
 </div>
 
 <div class="services">
 
-<div class="service-box">
-<h3>☁️ AWS Cloud</h3>
-<p>Designing and deploying secure, scalable cloud infrastructure on Amazon Web Services.</p>
-</div>
+<div class="card">
 
-<div class="service-box">
-<h3>🐳 Docker</h3>
-<p>Containerizing applications to ensure consistency across development, testing, and production.</p>
-</div>
+<h3>☁ AWS Cloud Solutions</h3>
 
-<div class="service-box">
-<h3>☸️ Kubernetes</h3>
-<p>Managing and scaling containerized applications with Kubernetes orchestration.</p>
-</div>
+<p>
 
-<div class="service-box">
-<h3>⚙️ CI/CD</h3>
-<p>Building automated pipelines using GitHub, Jenkins, and Docker for faster deployments.</p>
-</div>
+Designing scalable, reliable, and secure cloud infrastructure for startups and enterprises.
 
-<div class="service-box">
-<h3>🔒 Security</h3>
-<p>Implementing security best practices, access control, and infrastructure hardening.</p>
-</div>
-
-<div class="service-box">
-<h3>📊 Monitoring</h3>
-<p>Monitoring application health, performance, and availability for reliable operations.</p>
-</div>
+</p>
 
 </div>
 
 <div class="card">
 
-<h2>Why Choose Jerry DevOps Company?</h2>
+<h3>🐳 Docker Containerization</h3>
 
 <p>
-Our experienced engineers deliver reliable, secure, and automated cloud solutions
-that reduce deployment time, improve operational efficiency, and enable businesses
-to innovate with confidence.
+
+Packaging applications into lightweight containers for consistent deployments.
+
 </p>
 
-<a href="/" class="btn">⬅ Back Home</a>
+</div>
+
+<div class="card">
+
+<h3>☸ Kubernetes</h3>
+
+<p>
+
+Deploying and managing highly available containerized applications with Kubernetes.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>⚙ CI/CD Automation</h3>
+
+<p>
+
+Building automated deployment pipelines using GitHub, Jenkins, Docker, and Kubernetes.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🔒 Cloud Security</h3>
+
+<p>
+
+Implementing security best practices, identity management, and infrastructure protection.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📊 Monitoring & Support</h3>
+
+<p>
+
+Monitoring applications and infrastructure to ensure maximum uptime and performance.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="bottom">
+
+<h2>Why Businesses Choose JecomTech</h2>
+
+<p>
+
+Our experienced engineers combine automation, cloud computing, and DevOps best practices to help organizations deploy faster, reduce downtime, improve security, and scale with confidence.
+
+</p>
+
+<a href="/" class="btn">Back Home</a>
 
 </div>
 
@@ -189,10 +262,11 @@ to innovate with confidence.
 
 <footer>
 
-<p>© 2026 Jerry DevOps Company | Cloud • DevOps • Automation</p>
+<p><strong>© 2026 JecomTech Company</strong></p>
+
+<p>Cloud • DevOps • Docker • Kubernetes • Jenkins • AWS</p>
 
 </footer>
 
 </body>
-
 </html>
